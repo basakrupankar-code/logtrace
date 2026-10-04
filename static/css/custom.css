@@ -1,0 +1,147 @@
+/* ═══════════════════════════════════════════════
+   LogTrace AI — Custom CSS
+   Enhancements beyond Tailwind for the cyber theme
+   ═══════════════════════════════════════════════ */
+
+/* ── Scrollbar styling ── */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #0c1222;
+}
+::-webkit-scrollbar-thumb {
+    background: #1a2744;
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #243556;
+}
+
+/* ── Scan-line overlay effect on cards ── */
+.scan-effect {
+    position: relative;
+    overflow: hidden;
+}
+.scan-effect::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(6, 182, 212, 0.03) 50%,
+        transparent 100%
+    );
+    height: 50%;
+    animation: scan-line 3s linear infinite;
+    pointer-events: none;
+}
+
+/* ── Glowing border pulse ── */
+.glow-border {
+    box-shadow:
+        0 0 0 1px rgba(6, 182, 212, 0.1),
+        0 0 15px -3px rgba(6, 182, 212, 0.1),
+        inset 0 0 15px -3px rgba(6, 182, 212, 0.05);
+}
+
+/* ── Tab button styles ── */
+.tab-btn {
+    background: transparent;
+    color: #6b7280;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.tab-btn:hover {
+    color: #d1d5db;
+    background: rgba(255, 255, 255, 0.03);
+}
+.tab-btn.active {
+    color: #06b6d4;
+    background: rgba(6, 182, 212, 0.08);
+    border-color: rgba(6, 182, 212, 0.2);
+}
+
+/* ── Prose overrides for the report modal ── */
+.prose h2 {
+    color: #06b6d4 !important;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #1a2744;
+}
+.prose h3 {
+    color: #e2e8f0 !important;
+    font-size: 0.95rem;
+}
+.prose p {
+    color: #9ca3af;
+    line-height: 1.7;
+}
+.prose strong {
+    color: #f3f4f6;
+}
+.prose table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+}
+.prose th {
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    background: #111c32;
+    color: #06b6d4;
+    border-bottom: 1px solid #1a2744;
+    font-weight: 600;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.prose td {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid #1a2744;
+    color: #d1d5db;
+}
+.prose tr:hover td {
+    background: rgba(6, 182, 212, 0.03);
+}
+.prose ul, .prose ol {
+    color: #9ca3af;
+}
+.prose li {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+.prose code {
+    color: #f97316;
+    background: rgba(249, 115, 22, 0.1);
+    padding: 0.15rem 0.4rem;
+    border-radius: 0.25rem;
+    font-size: 0.8rem;
+}
+
+/* ── Background grid pattern ── */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(6, 182, 212, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(6, 182, 212, 0.015) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ── Smooth transitions on interactive elements ── */
+button {
+    transition: all 0.2s ease;
+}
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
